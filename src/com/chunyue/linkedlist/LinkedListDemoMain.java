@@ -2,7 +2,8 @@ package com.chunyue.linkedlist;
 
 public class LinkedListDemoMain {
     public static void main(String[] args) {
-        singlyLinkedListDemo();
+        // singlyLinkedListDemo();
+        // circularLinkedListDemo();
     }
 
     public static void singlyLinkedListDemo(){
@@ -16,5 +17,20 @@ public class LinkedListDemoMain {
         System.out.println("Removed the first number: " + integerSinglyLinkedList);
         System.out.println("The first number is: " + integerSinglyLinkedList.first());
         System.out.println("The last number is: " + integerSinglyLinkedList.last());
+    }
+
+    public static void circularLinkedListDemo(){
+        CircularLinkedList<Integer> integerCircularLinkedList = new CircularLinkedList<>();
+        System.out.println("Initial integer CLL looks like: " + integerCircularLinkedList);
+        integerCircularLinkedList.addFirst(4);
+        integerCircularLinkedList.addLast(3);
+        integerCircularLinkedList.addFirst(23);
+        System.out.println("After some numbers, CLL looks like: " + integerCircularLinkedList);
+        integerCircularLinkedList.rotate();
+        System.out.println("After rotation, CLL looks like: " + integerCircularLinkedList);
+        integerCircularLinkedList.removeFirst();
+        System.out.println("Removed the first number: " + integerCircularLinkedList);
+        System.out.println("The first number is: " + integerCircularLinkedList.first());
+        System.out.println("The last number is: " + integerCircularLinkedList.last());
     }
 }
