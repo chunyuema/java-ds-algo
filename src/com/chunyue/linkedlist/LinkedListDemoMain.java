@@ -4,6 +4,7 @@ public class LinkedListDemoMain {
     public static void main(String[] args) {
         // singlyLinkedListDemo();
         // circularLinkedListDemo();
+        // doublyLinkedListDemo();
     }
 
     public static void singlyLinkedListDemo(){
@@ -32,5 +33,19 @@ public class LinkedListDemoMain {
         System.out.println("Removed the first number: " + integerCircularLinkedList);
         System.out.println("The first number is: " + integerCircularLinkedList.first());
         System.out.println("The last number is: " + integerCircularLinkedList.last());
+    }
+
+    public static void doublyLinkedListDemo(){
+        DoublyLinkedList<Integer> integerDoublyLinkedList = new DoublyLinkedList<>();
+        integerDoublyLinkedList.addFirst(3);
+        integerDoublyLinkedList.addFirst(4);
+        integerDoublyLinkedList.addFirst(9);
+        integerDoublyLinkedList.addLast(67);
+        System.out.println("Initial doubly linked list: " + integerDoublyLinkedList);
+        integerDoublyLinkedList.removeLast();
+        integerDoublyLinkedList.removeFirst();
+        System.out.println("After removing the last and the first element: " + integerDoublyLinkedList);
+        System.out.println("The first element: " + integerDoublyLinkedList.first());
+        System.out.println("The last element: " + integerDoublyLinkedList.last());
     }
 }
