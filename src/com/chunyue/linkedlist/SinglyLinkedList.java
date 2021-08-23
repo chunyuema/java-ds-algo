@@ -64,4 +64,19 @@ public class SinglyLinkedList<E>{
         }
         return elements.toString();
     }
+
+    public boolean equals(Object o){
+        if (o == null) return false;
+        if (this.getClass() != o.getClass()) return false;
+        SinglyLinkedList other = (SinglyLinkedList) o;
+        if (this.size != other.size) return false;
+        Node currentNodeThis = this.head;
+        Node currentNodeOther = other.head;
+        while (currentNodeThis != null){
+            if (!(currentNodeThis.getElement().equals(currentNodeOther.getElement()))) return false;
+            currentNodeThis = currentNodeThis.getNext();
+            currentNodeOther = currentNodeOther.getNext();
+        }
+        return true;
+    }
 }
