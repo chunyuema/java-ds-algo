@@ -2,9 +2,10 @@ package com.chunyue.linkedlist;
 
 public class LinkedListDemoMain {
     public static void main(String[] args) {
-        singlyLinkedListDemo();
+        // singlyLinkedListDemo();
         // circularLinkedListDemo();
         // doublyLinkedListDemo();
+        cloningSLL();
     }
 
     public static void singlyLinkedListDemo(){
@@ -53,5 +54,21 @@ public class LinkedListDemoMain {
         System.out.println("After removing the last and the first element: " + integerDoublyLinkedList);
         System.out.println("The first element: " + integerDoublyLinkedList.first());
         System.out.println("The last element: " + integerDoublyLinkedList.last());
+    }
+
+    public static void cloningSLL(){
+        SinglyLinkedList<Person> personSinglyLinkedList = new SinglyLinkedList<>();
+        Person p1 = new Person("chunyue");
+        Person p2 = new Person("alex");
+        personSinglyLinkedList.addFirst(p1);
+        personSinglyLinkedList.addFirst(p2);
+        System.out.println("person sll looks like: " + personSinglyLinkedList);
+
+        try {
+            SinglyLinkedList<Person> copiedPersonSLL = personSinglyLinkedList.clone();
+            System.out.println("copied person sll looks like: " + copiedPersonSLL);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 }

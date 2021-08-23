@@ -2,7 +2,7 @@ package com.chunyue.linkedlist;
 
 import java.util.ArrayList;
 
-public class SinglyLinkedList<E>{
+public class SinglyLinkedList<E> implements Cloneable{
     private Node<E> head = null;
     private Node<E> tail = null;
     private int size = 0;
@@ -78,5 +78,22 @@ public class SinglyLinkedList<E>{
             currentNodeOther = currentNodeOther.getNext();
         }
         return true;
+    } {}
+
+    public SinglyLinkedList<E> clone() throws CloneNotSupportedException {
+        // use inherited clone method on Object class to make a shallow copy;
+        SinglyLinkedList<E> copy = (SinglyLinkedList<E>) super.clone();
+        if (this.size > 0) {
+            copy.head = new Node<>(this.head.getElement(), null);
+            Node<E> currentNode = this.head.getNext();
+            Node<E> copyTail = copy.head;
+            while (currentNode != null){
+                Node<E> newNode = new Node<>(currentNode.getElement(), null);
+                copyTail.setNext(newNode);
+                copyTail = newNode;
+                currentNode = currentNode.getNext();
+            }
+        }
+        return copy;
     }
 }
