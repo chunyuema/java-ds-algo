@@ -37,7 +37,7 @@ public class ArrayList<E> implements List<E>{
 
     @Override
     public void add(int i, E e) throws IndexOutOfBoundsException, IllegalStateException {
-        checkIndex(i, this.size);
+        checkIndex(i, this.size+1);
         if (size == this.data.length){
             throw new IllegalStateException("Array is full...");
         }
