@@ -5,6 +5,10 @@ public class Node<E extends Integer> {
     private Node left; // left tree address
     private Node right; // right tree address
 
+    public Node(E item) {
+        this.item = item;
+    }
+
     // add node
     public void addNode(Node node) {
         if (node.item.intValue() < this.item.intValue()) {

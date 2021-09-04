@@ -1,6 +1,6 @@
 package com.chunyue.tree;
 
-public class BinaryTreeSort<E extends Integer> {
+public class BinarySearchTree<E extends Integer> {
     private Node root;
 
     public void add(E element){
