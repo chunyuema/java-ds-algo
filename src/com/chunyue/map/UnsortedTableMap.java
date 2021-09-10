@@ -6,6 +6,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
+
+// This class will require O(n) times in the worst case since it scans through the entire list
+// in order to locate the existing entry
 public class UnsortedTableMap<K, V> extends AbstractMap<K, V> {
     // Use an array list to store the map entries
     private ArrayList<MapEntry<K, V>> table = new ArrayList<>();
