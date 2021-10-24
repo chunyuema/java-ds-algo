@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class AbstractBinaryTree<E> extends AbstractTree<E> implements BinaryTree<E> {
+    // return the position of p's sibling (or null if no siblings exist)
     public Position<E> sibling(Position<E> p) {
         Position<E> parent = parent(p);
         if (parent == null) return null;
@@ -14,6 +15,7 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E> implements B
         else return left(parent);
     }
 
+    // return the number of the children of position p
     @Override
     public int numChildren(Position<E> p) {
         int count = 0;
@@ -22,6 +24,7 @@ public abstract class AbstractBinaryTree<E> extends AbstractTree<E> implements B
         return count;
     }
 
+    // return an iterable collection of the positions representing p's children
     public Iterable<Position<E>> children(Position<E> p) {
         List<Position<E>> snapshot = new ArrayList<>(2);
         if (left(p) != null) snapshot.add(left(p));
